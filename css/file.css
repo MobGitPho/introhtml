@@ -57,9 +57,9 @@
   border: 2px solid gray;
   padding-right: 5px;
   text-align: center;
-  background-color: transparent;
+  background-color: darkgray;
   border-radius: 7px;
-  opacity: 0.5;
+  opacity: 0.8;
 }
 .menuh .signupbc {
   border: 2px solid gray;
@@ -67,7 +67,7 @@
   text-align: center;
   background-color: #170a8b;
   border-radius: 7px;
-  opacity: 0.5;
+  opacity: 0.8;
 }
 
 .menup {
