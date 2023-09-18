@@ -1,7 +1,21 @@
+$colWhite:white;
+$colf2:#f2f2f2;
+$colblue:#0099cc;
+$colgray:gray;
+$coldgray:darkgray;
+$coldblue:#170a8b;
+$colbimg:#a79c9ccc;
+$colgrey:grey;
+$colblack:black;
+
 * {
     box-sizing: border-box;
   }
-  
+  body {
+    display: block;
+    margin: auto;
+    overflow-x: hidden;
+  }
   .row::after {
     content: "";
     clear: both;
@@ -13,19 +27,65 @@
     padding: 15px;
   }
   
- 
-  
   .header {
     //background-color: #9933cc;
-    color: #ffffff;
+    color: $colWhite;
     padding: 15px;
     //background-image: url("./skate.png");
     margin-bottom: 20px;
-    opacity: 0.5;
-
+    position: relative;
+    .headerchild{
+      position: relative;
+      z-index: 1;
+    }
+   .mask{
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-color: rgba(0,0,0, 0.5);
+   }
+   .buttonvert{
+    border: 1px solid gray;
+    width: 25px;
+    height:25px;
+    position:absolute ;
+    top:120px;
+    left: 0px ;
+    padding:5px auto;
+    z-index: 1;
+    background-color: green;
+    i{
+      padding-top: 5px;
+      padding-bottom: 5px;
+      padding-left: 35%;
+      padding-right: 35%;
+      width: 2px;
+      height: 2px;
+    }
+   }
+   .buttonrond{
+    border: 1px solid grey;
+    width: 25px;
+    height:25px;
+    position:absolute ;
+    bottom:-10px;
+    margin-right: 50% ;
+    margin-left: 50% ;
+    border-radius: 50%;
+    padding:5px auto;
+    z-index: 1;
+    background-color: #4a3bcc;
+    i{
+      padding-top: 5px;
+      padding-left: 30%;
+      padding-right: 30%;
+    }
+   }
   }
   .menupro{
-    background-color:#f2f2f2; 
+    background-color:$colf2; 
    // opacity: 0.5;
    
   }
@@ -42,9 +102,9 @@
     li{
         padding: 6px;
         margin-bottom: 5px;
-        color: white;    // #d13495; 
+        color: $colWhite;    // #d13495; 
         &:hoover{
-            background-color: #0099cc;
+            background-color: $colblue;
         }
     }
     .guide{
@@ -52,26 +112,26 @@
         font-size: 20px;
     }
     .signup{
-        border: 3px solid white;
+        border: 3px solid $colWhite;
         text-align: center;
-        color: white;
+        color: $colWhite;
         background-color: transparent;
         border-radius: 7px;
         opacity: 0.5;
     }
     .signupba{
-      border: 2px solid gray;
+      border: 2px solid $colgray;
       padding-right: 5px;
       text-align: center;
-      background-color: darkgray ;
+      background-color: $coldgray ;
       border-radius: 7px;
       opacity: 0.8;
     }
     .signupbc{
-      border: 2px solid gray;
+      border: 2px solid $colgray;
       padding-right: 5px;
       text-align: center;
-      background-color:  #170a8b;
+      background-color: $coldblue ;
       border-radius: 7px;
       opacity: 0.8;
     
@@ -82,11 +142,11 @@
     border-radius: O 5px 5px Opx;
    
     .menupimg{
-      border-top: 2px solid #a79c9ccc;
-      border-left: 2px solid #a79c9ccc;
-      border-right: 2px solid #a79c9ccc;
+      border-top: 2px solid $colbimg;
+      border-left: 2px solid $colbimg;
+      border-right: 2px solid $colbimg;
       border-radius: 5px 5px 0px 2px ;
-      box-shadow: 0px  grey;
+      box-shadow: 0px  $colgrey;
       img{
         object-fit: fill;
         margin: 0 auto;
@@ -96,34 +156,24 @@
     .menupa{
         border: 1px solid rgb(167, 162, 162);
         padding: 0 auto;
-        box-shadow: 0px 3px 2px 0px grey;
+        box-shadow: 0px 3px 2px 0px $colgrey;
         border-radius: 0px 0px 5px 5px;
         opacity: 0.5;
     }
 }
   .product {
-    color: black;
+    color: $colblack;
     text-align: center;
     padding: 0px;
-    background-color: white;
+    background-color: $colWhite;
   }
   .productf {
-    color: black;
+    color: $colblack;
     text-align: center;
     padding: 0px;
     opacity: 0.5;
   }
-  /*.imgp{
-    float: left;
-    width: 100%;
-    padding: 0px;
-    //border: 1px solid black;
-    
-    img{
-        width: 100%;
-        object-fit: contain;
-    }
-  }*/
+
   .produit::after{
     content: "";
     clear: none;
@@ -140,7 +190,7 @@
     padding: 8px;
     margin-bottom: 7px;
     background-color: #33b5e5;
-    color: #ffffff;
+    color: $colWhite;
     box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
   }
   
@@ -163,7 +213,7 @@
   }
   
   @media only screen and (min-width: 768px) {
-    /* For desktop: */
+ 
     .col-1 {width: 8.33%;}
     .col-2 {width: 16.66%;}
     .col-3 {width: 25%;}
@@ -179,31 +229,21 @@
   }
 
  
-
-
-
-  
-  
-
- 
-  
-  /* Add padding BETWEEN each column */
   .row,
   .row > .column {
     padding: 8px;
   }
   
-  /* Create three equal columns that floats next to each other */
+
   .column {
     float: left;
     width: 33.33%;
-    display: none; /* Hide all elements by default */
+    display: none; 
   }
 
   
-  /* Content */
   .content {
-    background-color: white;
+    background-color: $colWhite;
     padding: 10px;
   }
   

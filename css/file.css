@@ -2,6 +2,12 @@
   box-sizing: border-box;
 }
 
+body {
+  display: block;
+  margin: auto;
+  overflow-x: hidden;
+}
+
 .row::after {
   content: "";
   clear: both;
@@ -14,10 +20,59 @@
 }
 
 .header {
-  color: #ffffff;
+  color: white;
   padding: 15px;
   margin-bottom: 20px;
-  opacity: 0.5;
+  position: relative;
+}
+.header .headerchild {
+  position: relative;
+  z-index: 1;
+}
+.header .mask {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.header .buttonvert {
+  border: 1px solid gray;
+  width: 25px;
+  height: 25px;
+  position: absolute;
+  top: 120px;
+  left: 0px;
+  padding: 5px auto;
+  z-index: 1;
+  background-color: green;
+}
+.header .buttonvert i {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 35%;
+  padding-right: 35%;
+  width: 2px;
+  height: 2px;
+}
+.header .buttonrond {
+  border: 1px solid grey;
+  width: 25px;
+  height: 25px;
+  position: absolute;
+  bottom: -10px;
+  margin-right: 50%;
+  margin-left: 50%;
+  border-radius: 50%;
+  padding: 5px auto;
+  z-index: 1;
+  background-color: #4a3bcc;
+}
+.header .buttonrond i {
+  padding-top: 5px;
+  padding-left: 30%;
+  padding-right: 30%;
 }
 
 .menupro {
@@ -106,17 +161,6 @@
   opacity: 0.5;
 }
 
-/*.imgp{
-  float: left;
-  width: 100%;
-  padding: 0px;
-  //border: 1px solid black;
-
-  img{
-      width: 100%;
-      object-fit: contain;
-  }
-}*/
 .produit::after {
   content: "";
   clear: none;
@@ -133,7 +177,7 @@
   padding: 8px;
   margin-bottom: 7px;
   background-color: #33b5e5;
-  color: #ffffff;
+  color: white;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
 }
 
@@ -155,7 +199,6 @@
 }
 
 @media only screen and (min-width: 768px) {
-  /* For desktop: */
   .col-1 {
     width: 8.33%;
   }
@@ -193,20 +236,17 @@
     width: 100%;
   }
 }
-/* Add padding BETWEEN each column */
 .row,
 .row > .column {
   padding: 8px;
 }
 
-/* Create three equal columns that floats next to each other */
 .column {
   float: left;
   width: 33.33%;
-  display: none; /* Hide all elements by default */
+  display: none;
 }
 
-/* Content */
 .content {
   background-color: white;
   padding: 10px;
